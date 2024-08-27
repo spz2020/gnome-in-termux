@@ -85,6 +85,7 @@ function get_sys_info() {
 function update_sys() {
 	banner
 	echo "${R} [${W}-${R}]${G}Updating alpine's System..." ${W}
+        sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 	apk update
     apk upgrade
 }
